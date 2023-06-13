@@ -1,0 +1,85 @@
+﻿
+@{
+	ViewData["Title"] = "Index";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+<body>
+
+	<div class="header">
+		<div class="container">
+			@await Component.InvokeAsync("_TopAddressPartial")
+
+			@await Component.InvokeAsync("_SocialMediaPartial")
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	
+	@await Component.InvokeAsync("_NavbarPartial")
+		
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+
+							<div class="modal-dialog">					
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4>Vakti Hasat</h4>
+										<img src="~/web/images/banner1.jpg" alt=" " class="img-responsive">
+										<h5>-Çevre ve Sürdürülebilirlik-</h5>
+										<p>Sürdürülebilir çevre; gelecek kuşakların ihtiyaç duyacağı kaynakların varlığını ve kalitesini tehlikeye atmadan, hem bugünün hem de gelecek kuşakların çevresini oluşturan tüm çevresel değerlerin her alanda (sosyal, ekonomik, fizikî vb.) ıslahı, korunması ve geliştirilmesi sürecini ifade eder.</p>
+									</div>
+								</div>								
+							</div>
+							
+		</div>
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4>Vakti Hasat</h4>
+										<img src="~/web/images/g4.jpg" alt=" " class="img-responsive">
+										<h5>-Dünya Çapında Tarım Önerileri-</h5>
+										<p>Tarım sektörümüzün  bugün içinde bulunduğu  durum dikkate alınarak, öncelikle  etkin ve sürdürülebilir bir tarım politikasının uygulanması ve bu amaçla, ülke çapında bir tarım planlaması ve yeni bir teşkilatlanma modeli oluşturulması gerekiyor. Bu Politika, günün koşullarına uygun yeniliklerin yanı sıra, daha önce  yararı görülmüş olan kurum ve kuruluşların önemli bir kısmının, yeniden kurulması, canlandırılması ve asli görevlerine döndürülmesi gibi hususları da kapsamalıdır.</p>
+									</div>
+								</div>
+							</div>
+		</div>
+		
+<!-- about -->
+	@await Component.InvokeAsync("_AboutPartial")
+<!-- //about-bottom -->
+<!--sevices-->
+	@await Component.InvokeAsync("_ServicePartial")
+<!--//sevices-->
+<!-- team -->
+	@await Component.InvokeAsync("_TeamPartial")
+<!-- //team -->
+<!--blog -->
+	@await Component.InvokeAsync("_AnnouncementPartial")
+<!-- //blog -->
+
+ <!--/gallery-->
+	@await Component.InvokeAsync("_GalleryPartial")
+<!--//gallery-->
+<!--footer-->
+<div class="contact-agile" id="contact">
+			<div class="container">
+			@await Component.InvokeAsync("_AddressPartial")
+
+				@await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+				@*@await Component.InvokeAsync("_ContactPartial")*@				
+			</div>
+			@await Component.InvokeAsync("_MapPartial")
+
+			<div class="copy">
+		        <p>© @DateTime.Now.Year . Tüm Hakları Saklıdır | Tasarım -> <a href="http://w3layouts.com/">W3layouts</a> </p>
+		    </div>
+			@await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
+</body>
+</html>
